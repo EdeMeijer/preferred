@@ -1,0 +1,17 @@
+{
+  "name": "preferred",
+  "version": "0.1.0",
+  "description": "Utility for working with preferred number sequences",
+  "main": "index.js",
+  "repository": "github:EdeMeijer/preferred",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "preferred",
+    "number"
+  ],
+  "homepage": "https://github.com/EdeMeijer/preferred",
+  "author": "Ede Meijer",
+  "license": "MIT"
+}
