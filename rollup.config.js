@@ -1,7 +1,7 @@
 import pkg from './package.json';
-import { terser } from "rollup-plugin-terser";
+import minify from "rollup-plugin-babel-minify";
 
-const plugins = [terser()];
+const plugins = [minify({ comments: false })];
 
 export default {
     input: 'src/main.js',
@@ -13,7 +13,7 @@ export default {
         },
         {
             file: pkg.module,
-            format: 'es'
+            format: 'esm'
         },
         {
             file: pkg.browser,
