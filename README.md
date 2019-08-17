@@ -23,16 +23,14 @@ const seq = preferred.oneTwoFive();
 
 ### Browser
 
-Download a packaged version
-
-- [preferred.js](https://raw.githubusercontent.com/EdeMeijer/preferred/master/dist/preferred.js)
-- [preferred.min.js](https://raw.githubusercontent.com/EdeMeijer/preferred/master/dist/preferred.min.js)
+Download the 
+[browser version](https://raw.githubusercontent.com/EdeMeijer/preferred/master/dist/preferred.bundle.js)
 
 ```html
-<script src="preferred.js"></script>
+<script src="preferred.bundle.js"></script>
 
 <script>
-    const seq = preferred.oneTwoFive();
+    const seq = Preferred.oneTwoFive();
 </script>
 ```
 

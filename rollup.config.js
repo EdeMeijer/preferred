@@ -1,21 +1,25 @@
-import minify from 'rollup-plugin-babel-minify';
+import pkg from './package.json';
+import { terser } from "rollup-plugin-terser";
 
-const name = 'preferred';
-const min = process.env.MINIFY || false;
-
-const plugins = [];
-const file = `dist/${name}${min ? '.min' : ''}.js`;
-
-if (min) {
-    plugins.push(minify({ comments: false }));
-}
+const plugins = [terser()];
 
 export default {
     input: 'src/main.js',
-    output: {
-        file: file,
-        format: 'umd',
-        name
-    },
+
+    output: [
+        {
+            file: pkg.main,
+            format: 'cjs'
+        },
+        {
+            file: pkg.module,
+            format: 'es'
+        },
+        {
+            file: pkg.browser,
+            format: 'iife',
+            name: 'Preferred'
+        }
+    ],
     plugins
 };
