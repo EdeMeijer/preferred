@@ -7,7 +7,9 @@
   "scripts": {
     "build": "npm run build:prod && npm run build:min",
     "build:prod": "rollup -c",
-    "build:min": "rollup -c --environment MINIFY"
+    "watch": "rollup -c --watch",
+    "build:min": "rollup -c --environment MINIFY",
+    "test": "npm run build:prod && jest"
   },
   "keywords": [
     "preferred",
@@ -17,6 +19,10 @@
   "author": "Ede Meijer",
   "license": "MIT",
   "devDependencies": {
+    "jest": "^24.9.0",
     "rollup-plugin-uglify": "^6.0.2"
+  },
+  "dependencies": {
+    "jest-matcher-deep-close-to": "^1.3.0"
   }
 }
