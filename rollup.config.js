@@ -1,4 +1,4 @@
-import { uglify } from 'rollup-plugin-uglify';
+import minify from 'rollup-plugin-babel-minify';
 
 const name = 'preferred';
 const min = process.env.MINIFY || false;
@@ -7,7 +7,7 @@ const plugins = [];
 const file = `dist/${name}${min ? '.min' : ''}.js`;
 
 if (min) {
-    plugins.push(uglify());
+    plugins.push(minify({ comments: false }));
 }
 
 export default {
