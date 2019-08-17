@@ -5,9 +5,9 @@
   "main": "dist/preferred.js",
   "repository": "github:EdeMeijer/preferred",
   "scripts": {
-    "build": "rollup -c",
-    "watch": "rollup -c --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build:prod && npm run build:min",
+    "build:prod": "rollup -c",
+    "build:min": "rollup -c --environment MINIFY"
   },
   "keywords": [
     "preferred",

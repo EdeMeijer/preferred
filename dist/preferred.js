@@ -1,1 +1,15 @@
-!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports):"function"==typeof define&&define.amd?define(["exports"],t):t((e=e||self).preferred={})}(this,function(e){"use strict";e.thing=function(e){return e+42},Object.defineProperty(e,"__esModule",{value:!0})});
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = global || self, factory(global.preferred = {}));
+}(this, function (exports) { 'use strict';
+
+    function thing (foo) {
+        return foo + 42;
+    }
+
+    exports.thing = thing;
+
+    Object.defineProperty(exports, '__esModule', { value: true });
+
+}));
