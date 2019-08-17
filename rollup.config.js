@@ -1,24 +1,18 @@
-import pkg from './package.json';
-import minify from "rollup-plugin-babel-minify";
+import { terser } from "rollup-plugin-terser";
+import babel from "rollup-plugin-babel";
 
-const plugins = [minify({ comments: false })];
+const plugins = [
+    babel(),
+    terser({ ecma: 5 })
+];
 
 export default {
     input: 'src/main.js',
-
     output: [
         {
-            file: pkg.main,
-            format: 'cjs'
-        },
-        {
-            file: pkg.module,
-            format: 'esm'
-        },
-        {
-            file: pkg.browser,
-            format: 'iife',
-            name: 'Preferred'
+            file: './dist/preferred.js',
+            format: 'umd',
+            name: 'preferred'
         }
     ],
     plugins

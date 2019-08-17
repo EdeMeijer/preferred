@@ -3,15 +3,15 @@ import lazy from "./lazy";
 /**
  * Predefined sequence of [..., 0.01, 0.1, 1, 10, 100, ...]
  */
-export const powerOfTen = lazy(sequence, [1]);
+const powerOfTen = lazy(sequence, [1]);
 /**
  * Predefined sequence of [..., 1/4, 1/2, 1, 2, 4, ...]
  */
-export const powerOfTwo = lazy(sequence, [1], 2);
+const powerOfTwo = lazy(sequence, [1], 2);
 /**
  * Predefined sequence of [..., 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, ...]
  */
-export const oneTwoFive = lazy(sequence, [1, 2, 5]);
+const oneTwoFive = lazy(sequence, [1, 2, 5]);
 
 /**
  * Create a custom sequence
@@ -21,7 +21,7 @@ export const oneTwoFive = lazy(sequence, [1, 2, 5]);
  *
  * @return {Object}
  */
-export function sequence (numbers, base = 10) {
+function sequence (numbers, base = 10) {
     const logNums = numbers.map(num => ({ num, logNum: Math.log(num) }));
     const logBase = Math.log(base);
 
@@ -112,4 +112,11 @@ export function sequence (numbers, base = 10) {
             return dCeil <= dFloor ? ceil : floor;
         }
     }
+}
+
+export default {
+    sequence,
+    powerOfTwo,
+    powerOfTen,
+    oneTwoFive
 }

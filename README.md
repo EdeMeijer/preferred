@@ -17,20 +17,21 @@ $ npm install preferred
 ```
 ```js
 const preferred = require('preferred');
+// or when using es6 modules
+import preferred from 'preferred';
 
 const seq = preferred.oneTwoFive();
 ```
 
 ### Browser
 
-Download the 
-[browser version](https://raw.githubusercontent.com/EdeMeijer/preferred/master/dist/preferred.bundle.js)
+Download [preferred.js](https://raw.githubusercontent.com/EdeMeijer/preferred/master/dist/preferred.js)
 
 ```html
-<script src="preferred.bundle.js"></script>
+<script src="preferred.js"></script>
 
 <script>
-    const seq = Preferred.oneTwoFive();
+    const seq = preferred.oneTwoFive();
 </script>
 ```
 
